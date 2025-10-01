@@ -20,9 +20,20 @@ app.post('/subscriptions', {
       name: z.string(),
       email: z.string().email(),
     }),
+    response: {
+      201: z.object({
+        name: z.string(),
+        email: z.string(),
+      })
+    },
   },
-}, (request, reply) => {
-  const { name } = request.body
+}, async (request, reply) => {
+  const { name, email } = request.body
+
+  return reply.status(201).send({
+    name,
+    email,
+  })
 })
 
 app.listen({ port: 3333 }).then(() => {
