@@ -39,7 +39,7 @@
     }
   },
   "files": {
-    "includes": ["src/**/*.tsx"],
+    "includes": ["src/**/*.ts"],
     "ignoreUnknown": false
   }
 }
